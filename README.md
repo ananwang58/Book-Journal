@@ -1,6 +1,6 @@
 # My Personal Project
 
-## A subtitle
+## Book Journal
 
 A *bulleted* list:
 - item 1
