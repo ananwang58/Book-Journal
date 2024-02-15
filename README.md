@@ -17,5 +17,5 @@ An example of text with **bold** and *italic* fonts.
 - As a user, I want to be able to add a book I found funny to a list of books I found funny
 - As a user, I want to be able to pull up a list of books that I rated 5 stars
 - As a user, I want to be able to categorize books into genres
-- As a user, I want to be able to record when I started and when I finished the book
+- As a user, I want to be able to record my thought on a certain book
 - As a user, I want to be able to give books half-star ratings
