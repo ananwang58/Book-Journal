@@ -42,17 +42,13 @@ public class BookJournal {
         int entryNum = 1;
         String allEntries = "";
         for (Entry entry : bookJournal) {
-            if (entry.getEndDate() != null) {
-                endDate = "You finished this book on " + entry.getEndDate().toString();
-            } else {
-                endDate = "You have not finished this book yet";
-            }
             allEntries = allEntries + "\n" + "\n" + "Entry #" + entryNum + ": " + entry.getBookName() + "\n"
                     + "Author: " + entry.getBookAuthor() + "\n" + "Genre: " + entry.getBookGenre()
                     +  "\nMy Thoughts:\n" + entry.getBookReview() + "\n" + this.getBookOwner() + " rated this book "
                     + entry.getBookRating() + " stars!\n\n";
             entryNum++;
         }
+        allEntries = allEntries + "You have " + this.totalEntries() + " entries in the journal!";
         return allEntries;
     }
 

@@ -44,7 +44,7 @@ class BookJournalTest {
                 "Genre: Romance\n" +
                 "My Thoughts:\n" +
                 "null\n" +
-                "AnAn Wang rated this book 4.5 stars!\n\n", b1.displayAllEntries());
+                "AnAn Wang rated this book 4.5 stars!\n\nYou have 1 entries in the journal!", b1.displayAllEntries());
         assertEquals("Here are some books that made you swoon!\n" +
                 "1: Pride and Prejudice\n", b1.displayRomanceBooks());
         assertEquals("You have not read any funny books", b1.displayFunnyBooks());
@@ -65,7 +65,7 @@ class BookJournalTest {
                 "AnAn Wang rated this book 4.0 stars!\n" +
                 "\n" + "\n" + "\n" + "Entry #3: Bridget Jones's Diary\n" +
                 "Author: Helen Fielding\n" + "Genre: Comedy\n" + "My Thoughts:\n" + "null\n" +
-                "AnAn Wang rated this book 4.0 stars!\n" + "\n", b1.displayAllEntries());
+                "AnAn Wang rated this book 4.0 stars!\n" + "\nYou have 3 entries in the journal!", b1.displayAllEntries());
         assertEquals("Here are some books that made you swoon!\n" +
                 "1: Pride and Prejudice\n", b1.displayRomanceBooks());
         assertEquals("Here are some books you found funny!\n" +
@@ -93,6 +93,7 @@ class BookJournalTest {
         b1.addEntry(e5);
         assertEquals("The most recent book you read was Dune", b1.displayMostRecentBook());
         assertEquals("You have not read any romantic books", b1.displayRomanceBooks());
+        assertEquals(4, b1.totalEntries());
 
     }
 }
