@@ -88,6 +88,7 @@ class BookJournalTest {
     @Test
     void testDisplayMostRecentBook() {
         b1.addEntry(e3);
+        b1.addEntry(e3);
         b1.addEntry(e4);
         b1.addEntry(e5);
         assertEquals("The most recent book you read was Dune", b1.displayMostRecentBook());
