@@ -95,7 +95,7 @@ public class BookJournal {
             }
             listNum++;
         }
-        if (noRomanticBooks == "Here are some books that made you swoon!\n") {
+        if (allRomanticBooks == "Here are some books that made you swoon!\n") {
             return noRomanticBooks;
         }
         return allRomanticBooks;
@@ -109,4 +109,5 @@ public class BookJournal {
         mostRecentBookReadString = mostRecentBookReadString + mostRecentBookRead.getBookName();
         return mostRecentBookReadString;
     }
+
 }
