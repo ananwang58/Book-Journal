@@ -41,10 +41,6 @@ public class Entry {
         return this.rating;
     }
 
-    public Date getEndDate() {
-        return this.finishDate;
-    }
-
 
 
 }
