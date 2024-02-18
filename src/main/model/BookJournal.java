@@ -17,11 +17,13 @@ public class BookJournal {
 
     }
 
+    //EFFECTS: adds a journal entry to a list of journal entries
     public void addEntry(Entry entry) {
         this.bookJournal.add(entry);
     }
 
 
+    //EFFECTS: GETTERS
     public String getJournalName() {
         return name;
     }

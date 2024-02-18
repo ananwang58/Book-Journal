@@ -8,19 +8,21 @@ public class Entry {
     private String review; //review of book
     private String author; //author of book
     private String genre; //book genre
-    private Date startDate; //when you stated book
-    private Date finishDate; //when you ended book
 
-    public Entry(String name, String author, double rating, String genre) {
+    //EFFECTS: creates an entry with given book name, rating, genre and review
+    public Entry(String name, String author, double rating, String genre, String review) {
 
         this.name = name;
         this.author = author;
         this.rating = rating;
         this.genre = genre;
+        this.review = review;
 
 
     }
 
+
+    //EFFECTS: GETTERS
     public String getBookName() {
         return this.name;
     }

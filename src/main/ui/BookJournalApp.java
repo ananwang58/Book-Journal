@@ -17,13 +17,15 @@ public class BookJournalApp {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: initialized accounts
     private void init() {
         this.bookJournal = new BookJournal("Book Journal", "AnAn Wang");
         this.input = new Scanner(System.in);
         input.useDelimiter("\n");
     }
 
-
+    //EFFECTS: default display menu
     private void displayMenu() {
         System.out.println("\nWelcome to " + bookJournal.getBookOwner() + "'s " + bookJournal.getJournalName());
         System.out.println("\nSelect Options");
@@ -32,6 +34,8 @@ public class BookJournalApp {
         System.out.println("c -> View all Entries");
     }
 
+
+    //EFFECTS: display menu for creating a new book journal entry
     private void createEntryMenu() {
         System.out.println("\nWhat is the title of the book?");
         String bookTitle = input.next();
@@ -41,11 +45,15 @@ public class BookJournalApp {
         double rating = input.nextDouble();
         System.out.println("\nWhat is the genre of the book?");
         String genre = input.next();
-        Entry entry = new Entry(bookTitle, bookAuthor, rating, genre);
+        System.out.println("\nWhat are your thoughts on this book?");
+        String review = input.next();
+        Entry entry = new Entry(bookTitle, bookAuthor, rating, genre, review);
         bookJournal.addEntry(entry);
 
     }
 
+
+    //EFFECTS: display menu for other user options
     private void createListBooksMenu() {
         System.out.println("\nSelect Options");
         System.out.println("\na -> List all Funny Books");
@@ -68,7 +76,8 @@ public class BookJournalApp {
 
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: processes user command
     private void processCommand(String command) {
         if (command.equals("a")) {
             createEntryMenu();

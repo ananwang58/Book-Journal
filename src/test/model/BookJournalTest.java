@@ -20,14 +20,16 @@ class BookJournalTest {
     @BeforeEach
     void runBefore() {
         b1 = new BookJournal("Book Journal", "AnAn Wang");
-        e1 = new Entry("Pride and Prejudice", "Jane Austen", 4.5, "Romance");
+        e1 = new Entry("Pride and Prejudice", "Jane Austen", 4.5, "Romance"
+        , "");
         e2 = new Entry("The Hitchhiker's Guide to the Galaxy", "Douglas Adams"
-                , 4, "Comedy");
-        e3 = new Entry("Bridget Jones's Diary", "Helen Fielding", 4, "Comedy");
+                , 4, "Comedy", "");
+        e3 = new Entry("Bridget Jones's Diary", "Helen Fielding", 4, "Comedy"
+                , "");
         e4 = new Entry("The Invisible Life of Addie LaRue" ,"Novel by V. E. Schwab"
-                , 5, "Fantasy");
-        e5 = new Entry("Dune", "Frank Herbert", 4.5, "Sci-Fi");
-        e6 = new Entry("Dune", "Frank Herbert", 5, "Sci-Fi");
+                , 5, "Fantasy", "Such a magical and well written book with amazing storytelling");
+        e5 = new Entry("Dune", "Frank Herbert", 4.5, "Sci-Fi", "");
+        e6 = new Entry("Dune", "Frank Herbert", 5, "Sci-Fi", "");
     }
 
     @Test
@@ -43,7 +45,7 @@ class BookJournalTest {
                 "Author: Jane Austen\n" +
                 "Genre: Romance\n" +
                 "My Thoughts:\n" +
-                "null\n" +
+                "\n" +
                 "AnAn Wang rated this book 4.5 stars!\n\nYou have 1 entries in the journal!", b1.displayAllEntries());
         assertEquals("Here are some books that made you swoon!\n" +
                 "1: Pride and Prejudice\n", b1.displayRomanceBooks());
@@ -58,13 +60,13 @@ class BookJournalTest {
         b1.addEntry(e2);
         b1.addEntry(e3);
         assertEquals("\n" + "\n" + "Entry #1: Pride and Prejudice\n" +
-                "Author: Jane Austen\n" + "Genre: Romance\n" + "My Thoughts:\n" + "null\n" +
+                "Author: Jane Austen\n" + "Genre: Romance\n" + "My Thoughts:\n" + "\n" +
                 "AnAn Wang rated this book 4.5 stars!\n" + "\n" + "\n" + "\n" +
                 "Entry #2: The Hitchhiker's Guide to the Galaxy\n" +
-                "Author: Douglas Adams\n" + "Genre: Comedy\n" + "My Thoughts:\n" + "null\n" +
+                "Author: Douglas Adams\n" + "Genre: Comedy\n" + "My Thoughts:\n" + "\n" +
                 "AnAn Wang rated this book 4.0 stars!\n" +
                 "\n" + "\n" + "\n" + "Entry #3: Bridget Jones's Diary\n" +
-                "Author: Helen Fielding\n" + "Genre: Comedy\n" + "My Thoughts:\n" + "null\n" +
+                "Author: Helen Fielding\n" + "Genre: Comedy\n" + "My Thoughts:\n" + "\n" +
                 "AnAn Wang rated this book 4.0 stars!\n" + "\nYou have 3 entries in the journal!", b1.displayAllEntries());
         assertEquals("Here are some books that made you swoon!\n" +
                 "1: Pride and Prejudice\n", b1.displayRomanceBooks());
@@ -72,6 +74,18 @@ class BookJournalTest {
                 "2: The Hitchhiker's Guide to the Galaxy\n" +
                 "3: Bridget Jones's Diary\n", b1.displayFunnyBooks());
         assertEquals("", b1.displayFiveStarBooks());
+        b1.addEntry(e4);
+        assertEquals("\n" + "\n" + "Entry #1: Pride and Prejudice\n" + "Author: Jane Austen\n" +
+                "Genre: Romance\n" + "My Thoughts:\n" + "\n" + "AnAn Wang rated this book 4.5 stars!\n" +
+                "\n" + "\n" + "\n" + "Entry #2: The Hitchhiker's Guide to the Galaxy\n" +
+                "Author: Douglas Adams\n" + "Genre: Comedy\n" + "My Thoughts:\n" +
+                "\n" + "AnAn Wang rated this book 4.0 stars!\n" + "\n" + "\n" + "\n" +
+                "Entry #3: Bridget Jones's Diary\n" + "Author: Helen Fielding\n" + "Genre: Comedy\n" +
+                "My Thoughts:\n" + "\n" + "AnAn Wang rated this book 4.0 stars!\n" +
+                "\n" + "\n" + "\n" + "Entry #4: The Invisible Life of Addie LaRue\n" +
+                "Author: Novel by V. E. Schwab\n" + "Genre: Fantasy\n" + "My Thoughts:\n" +
+                "Such a magical and well written book with amazing storytelling\n" + "AnAn Wang rated this book 5.0 stars!\n" + "\n" +
+                "You have 4 entries in the journal!", b1.displayAllEntries());
     }
 
     @Test
