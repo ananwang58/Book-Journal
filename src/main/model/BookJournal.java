@@ -1,9 +1,16 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.JsonReader;
+import persistence.Writable;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class BookJournal {
-
+// Represents a book journal with a list of books
+public class BookJournal implements Writable {
     private String name; //Journal name
     private String owner; //Journal owner
     private ArrayList<Entry> bookJournal;
@@ -35,6 +42,11 @@ public class BookJournal {
 
     public int totalEntries() {
         return this.bookJournal.size();
+    }
+
+    // EFFECTS: returns an unmodifiable list of entries in this book journal
+    public List<Entry> getThingies() {
+        return Collections.unmodifiableList(bookJournal);
     }
 
     //REQUIRES: There to be at least one entry in the list
@@ -108,4 +120,21 @@ public class BookJournal {
         return mostRecentBookReadString;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("owner", owner);
+        json.put("book journal", entryToJson());
+        return json;
+    }
+
+    public JSONArray entryToJson() {
+        JSONArray jsonArray = new JSONArray();
+        for (Entry entry : bookJournal) {
+            jsonArray.put(entry.toJson());
+        }
+
+        return jsonArray;
+    }
 }

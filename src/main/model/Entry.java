@@ -1,8 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.Date;
 
-public class Entry {
+public class Entry implements Writable {
     private String name;  //the title of the Book
     private double rating; //rating out of 5
     private String review; //review of book
@@ -44,5 +47,15 @@ public class Entry {
     }
 
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("author", author);
+        json.put("review", review);
+        json.put("genre", genre);
+        json.put("rating", rating);
+        return json;
 
+    }
 }

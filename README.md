@@ -19,3 +19,5 @@ An example of text with **bold** and *italic* fonts.
 - As a user, I want to be able to categorize books into genres
 - As a user, I want to be able to record my thought on a certain book
 - As a user, I want to be able to give books half-star ratings
+- As a user, I want to be able to save the books I have added to my book journal (if I so choose)
+- As a user, I want to be able to be able to load my book journal from file (if I so choose)

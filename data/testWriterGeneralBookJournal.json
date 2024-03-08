@@ -1,0 +1,20 @@
+{
+    "owner": "AnAn Wang",
+    "book journal": [
+        {
+            "author": "Jane Austen",
+            "review": "",
+            "name": "Pride and Prejudice",
+            "genre": "Romance",
+            "rating": 4.5
+        },
+        {
+            "author": "Douglas Adams",
+            "review": "",
+            "name": "The Hitchhiker's Guide to the Galaxy",
+            "genre": "Comedy",
+            "rating": 4
+        }
+    ],
+    "name": "Book Journal"
+}

@@ -2,19 +2,27 @@ package ui;
 
 import model.BookJournal;
 import model.Entry;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Book Journal Application
 public class BookJournalApp {
-
+    private static final String JSON_STORE = "./data/bookJournal.json";
     private BookJournal bookJournal;
     private Scanner input;
+    private JsonReader jsonReader;
+    private JsonWriter jsonWriter;
 
-
-    public BookJournalApp() {
+    // runs the book journal application
+    public BookJournalApp() throws FileNotFoundException {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runBookJournal();
-
     }
 
     // MODIFIES: this
@@ -32,6 +40,9 @@ public class BookJournalApp {
         System.out.println("\na -> Add an entry");
         System.out.println("b -> List my books");
         System.out.println("c -> View all Entries");
+        System.out.println("s -> save book journal to file");
+        System.out.println("l -> load book journal from file");
+        System.out.println("q -> quit");
     }
 
 
@@ -85,10 +96,16 @@ public class BookJournalApp {
             createListBooksMenu();
         } else if (command.equals("c")) {
             System.out.println(bookJournal.displayAllEntries());
+        } else if (command.equals("s")) {
+            saveBookJournal();
+        } else if (command.equals("l")) {
+            loadBookJournal();
         } else {
             System.out.println("Selection not valid...");
         }
     }
+
+
 
 
     // MODIFIES: this
@@ -111,6 +128,26 @@ public class BookJournalApp {
             }
         }
         System.out.println("\nGoodbye, see you next time!");
+    }
+
+    private void saveBookJournal() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(bookJournal);
+            jsonWriter.close();
+            System.out.println("Saved" + bookJournal.getBookOwner() + " to " +  JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file " + JSON_STORE);
+        }
+    }
+
+    private void loadBookJournal() {
+        try {
+            bookJournal = jsonReader.read();
+            System.out.println("Loaded " + bookJournal.getBookOwner() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file " + JSON_STORE);
+        }
     }
 
 }
