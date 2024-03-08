@@ -1,11 +1,5 @@
 {
     "owner": "AnAn Wang",
-    "book journal": [{
-        "author": "jfnkje",
-        "review": "skjfer",
-        "name": "msjdf",
-        "genre": "romance",
-        "rating": 5
-    }],
+    "book journal": [],
     "name": "Book Journal"
 }

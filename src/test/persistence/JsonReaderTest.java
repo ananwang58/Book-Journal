@@ -30,7 +30,7 @@ public class JsonReaderTest extends JsonTest {
         JsonReader reader = new JsonReader("./data/testReaderEmptyBookJournal.json");
         try {
             BookJournal bookJournal = reader.read();
-            assertEquals("Book Journal", bookJournal.getJournalName());
+            assertEquals("book journal", bookJournal.getJournalName());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
@@ -41,7 +41,7 @@ public class JsonReaderTest extends JsonTest {
         JsonReader reader = new JsonReader("./data/testReaderGeneralBookJournal.json");
         try {
             BookJournal bookJournal = reader.read();
-            assertEquals("Book Journal", bookJournal.getJournalName());
+            assertEquals("book journal", bookJournal.getJournalName());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
