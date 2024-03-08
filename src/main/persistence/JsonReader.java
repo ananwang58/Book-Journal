@@ -16,6 +16,7 @@ import java.util.stream.Stream;
 
 import static jdk.jfr.Category.*;
 
+// https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
 
 // Represents a reader that reads workroom from the JSON data stored in file
 public class JsonReader {
