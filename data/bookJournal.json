@@ -1,5 +1,11 @@
 {
     "owner": "AnAn Wang",
-    "book journal": [],
+    "book journal": [{
+        "author": "everv",
+        "review": "dvf",
+        "name": "svef",
+        "genre": "dbr",
+        "rating": 5
+    }],
     "name": "Book Journal"
 }

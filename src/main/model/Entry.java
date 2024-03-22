@@ -5,6 +5,7 @@ import persistence.Writable;
 
 import java.util.Date;
 
+//EFFECTS: Represents an Entry in the Book Journal
 public class Entry implements Writable {
     private String name;  //the title of the Book
     private double rating; //rating out of 5

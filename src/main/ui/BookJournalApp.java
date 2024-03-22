@@ -130,6 +130,7 @@ public class BookJournalApp {
         System.out.println("\nGoodbye, see you next time!");
     }
 
+    //EFFECTS: Saves book journal
     private void saveBookJournal() {
         try {
             jsonWriter.open();
@@ -141,6 +142,7 @@ public class BookJournalApp {
         }
     }
 
+    //EFFECTS: Loads book journal
     private void loadBookJournal() {
         try {
             bookJournal = jsonReader.read();
