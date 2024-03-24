@@ -73,6 +73,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    // EFFECTS: formats Entry Button
     private void addEntryButton() {
         addEntryButton = new JButton("Add Entry");
         addEntryButton.setOpaque(true);
@@ -86,6 +87,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         addEntryButton.setForeground(new Color(66, 71, 63));
     }
 
+    // EFFECTS: formats List Books Button
     private void listBooksButton() {
         listBooksButton = new JButton("List Books");
         listBooksButton.setBackground(new Color(217, 226, 223));
@@ -99,6 +101,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         listBooksButton.setForeground(new Color(66, 71, 63));
     }
 
+    // EFFECTS: formats View All Button
     private void viewAllEntriesButton() {
         viewAllEntriesButton = new JButton("View All Entries");
         viewAllEntriesButton.setOpaque(true);
@@ -110,9 +113,9 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         viewAllEntriesButton.setBorder(thickBorder);
         viewAllEntriesButton.setFont(buttonFont);
         viewAllEntriesButton.setForeground(new Color(66, 71, 63));
-
     }
 
+    // EFFECTS: formats Save Button
     private void saveButton() {
         saveButton = new JButton("Save");
         saveButton.setOpaque(true);
@@ -124,9 +127,9 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         saveButton.setBorder(thickBorder);
         saveButton.setFont(buttonFont);
         saveButton.setForeground(new Color(66, 71, 63));
-
     }
 
+    // EFFECTS: formats Load Button
     private void loadButton() {
         loadButton = new JButton("Load");
         loadButton.setOpaque(true);
@@ -168,8 +171,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         }
     }
 
-
-
+    //EFFECTS: Default option pane setup
     private void optionPaneSetup() {
         Color customColour = new Color(207, 216, 221);
         UIManager.put("OptionPane.background", customColour); // Set background color
@@ -196,7 +198,6 @@ public class BookJournalGUI extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(this, "Unable to write to file " + JSON_STORE);
         }
     }
-
 
     //EFFECTS: Loads book journal
     private void loadBookJournal() {
