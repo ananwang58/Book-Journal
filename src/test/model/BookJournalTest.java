@@ -110,4 +110,10 @@ class BookJournalTest {
         assertEquals(4, b1.totalEntries());
 
     }
+
+    @Test
+    void testNoBooksAdded() {
+        assertEquals("You have 0 books in this journal!", b1.displayMostRecentBook());
+
+    }
 }

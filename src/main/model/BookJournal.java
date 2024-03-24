@@ -117,7 +117,7 @@ public class BookJournal implements Writable {
     //REQUIRES: There to be at least one entry in the list
     //EFFECTS: Returns the last item in the list
     public String displayMostRecentBook() {
-        String noBooks = "You have 0 books in this journal";
+        String noBooks = "You have 0 books in this journal!";
         String mostRecentBookReadString = "The most recent book you read was ";
         if (bookJournal.size() == 0) {
             return noBooks;
