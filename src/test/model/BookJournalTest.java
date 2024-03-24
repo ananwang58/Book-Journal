@@ -50,7 +50,7 @@ class BookJournalTest {
         assertEquals("Here are some books that made you swoon!\n" +
                 "1: Pride and Prejudice\n", b1.displayRomanceBooks());
         assertEquals("You have not read any funny books", b1.displayFunnyBooks());
-        assertEquals("", b1.displayFiveStarBooks());
+        assertEquals("You have not read any Five Star Books", b1.displayFiveStarBooks());
 
     }
 
@@ -73,7 +73,7 @@ class BookJournalTest {
         assertEquals("Here are some books you found funny!\n" +
                 "2: The Hitchhiker's Guide to the Galaxy\n" +
                 "3: Bridget Jones's Diary\n", b1.displayFunnyBooks());
-        assertEquals("", b1.displayFiveStarBooks());
+        assertEquals("You have not read any Five Star Books", b1.displayFiveStarBooks());
         b1.addEntry(e4);
         assertEquals("\n" + "\n" + "Entry #1: Pride and Prejudice\n" + "Author: Jane Austen\n" +
                 "Genre: Romance\n" + "My Thoughts:\n" + "\n" + "AnAn Wang rated this book 4.5 stars!\n" +

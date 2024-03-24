@@ -67,11 +67,15 @@ public class BookJournal implements Writable {
 
     //EFFECTS: Returns a list of titles of all the book in BookJournal that were rated five stars
     public String displayFiveStarBooks() {
+        String noFiveStarBooks = "You have not read any Five Star Books";
         String allFiveStarBooks = "";
         for (Entry entry : bookJournal) {
             if (entry.getBookRating() == 5) {
                 allFiveStarBooks = allFiveStarBooks + entry.getBookName() + " was a FIVE STAR BOOK!" + "\n";
             }
+        }
+        if (allFiveStarBooks == "") {
+            return noFiveStarBooks;
         }
         return allFiveStarBooks;
     }
@@ -113,7 +117,11 @@ public class BookJournal implements Writable {
     //REQUIRES: There to be at least one entry in the list
     //EFFECTS: Returns the last item in the list
     public String displayMostRecentBook() {
+        String noBooks = "You have 0 books in this journal";
         String mostRecentBookReadString = "The most recent book you read was ";
+        if (bookJournal.size() == 0) {
+            return noBooks;
+        }
         Entry mostRecentBookRead = bookJournal.get(bookJournal.size() - 1);
         mostRecentBookReadString = mostRecentBookReadString + mostRecentBookRead.getBookName();
         return mostRecentBookReadString;
