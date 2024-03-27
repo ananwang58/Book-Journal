@@ -65,8 +65,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         add(loadButton);
 
 
-        ImageIcon butterfly = new ImageIcon("/Users/ananwang58/CPSC 210/project_n4r3t(phase 2)"
-                + "/images/butterfly.png");
+        ImageIcon butterfly = new ImageIcon("images/butterfly.png");
         UIManager.put("OptionPane.informationIcon", butterfly);
 
 
@@ -180,9 +179,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         UIManager.put("OptionPane.buttonFont", new Font("Arial", Font.PLAIN, 14));
         Border customBorder = BorderFactory.createLineBorder(customColour, 20);
         UIManager.put("OptionPane.border", customBorder);
-        //ImageIcon icon = new ImageIcon("/Users/ananwang58/CPSC 210/projec"
-        //        + "t_n4r3t(phase 2)/images/bookStack.png");
-        UIManager.put("OptionPane.questionIcon", new ImageIcon());
+        UIManager.put("OptionPane.questionIcon", new ImageIcon()); //removes default image icon
         UIManager.put("OptionPane.minimumSize",new Dimension(400,150));
     }
 
@@ -219,8 +216,7 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         String[] options = {"List all Funny Books", "List all Romance Books", "List all Five Star Books",
                 "List Most Recent Book"};
 
-        ImageIcon listBookIcon = new ImageIcon("/Users/ananwang58/CPSC 210/project_n4r3t(phase 2)/images"
-                + "/Screenshot 2024-03-24 at 3.40.32 PM.png");
+        ImageIcon listBookIcon = new ImageIcon("images/Screenshot 2024-03-24 at 3.40.32 PM.png");
 
         int choice = JOptionPane.showOptionDialog(this, null, "List Books",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, listBookIcon, options, options[0]);
