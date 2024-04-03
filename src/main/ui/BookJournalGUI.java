@@ -2,6 +2,8 @@ package ui;
 
 import model.BookJournal;
 import model.Entry;
+import model.EventLog;
+import model.Event;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
@@ -11,8 +13,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -37,12 +38,14 @@ public class BookJournalGUI extends JFrame implements ActionListener {
     private static final String JSON_STORE = "./data/bookJournal.json";
     private JsonReader jsonReader;
     private JsonWriter jsonWriter;
-
+    private EventLog el = EventLog.getInstance();
 
     //EFFECTS: creates the applications main window frame
     BookJournalGUI() throws FileNotFoundException {
 
         super("Book Journal");
+
+        addWindowClosingListener();
 
         setSize(WIDTH, HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -50,7 +53,6 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         bookJournal = new BookJournal("Book Journal", "AnAn Wang");
-
         buttonFont = new Font("Futura", Font.PLAIN, 20);
         addEntryButton();
         listBooksButton();
@@ -64,13 +66,12 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         add(saveButton);
         add(loadButton);
 
-
         ImageIcon butterfly = new ImageIcon("images/butterfly.png");
         UIManager.put("OptionPane.informationIcon", butterfly);
 
-
         setVisible(true);
     }
+
 
     // EFFECTS: formats Entry Button
     private void addEntryButton() {
@@ -141,8 +142,6 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         loadButton.setFont(buttonFont);
         loadButton.setForeground(new Color(66, 71, 63));
     }
-
-
 
     //EFFECTS: Allows user to save, load, list and view all entries in their book journal
     @Override
@@ -237,4 +236,22 @@ public class BookJournalGUI extends JFrame implements ActionListener {
         }
 
     }
+
+
+
+    private void addWindowClosingListener() {
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                handleWindowClosing();
+            }
+        });
+    }
+
+    private void handleWindowClosing() {
+        for (Event e : el) {
+            System.out.println(e.toString() + "\n");
+        }
+    }
+
 }

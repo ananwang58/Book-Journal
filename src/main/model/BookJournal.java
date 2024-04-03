@@ -2,7 +2,6 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import persistence.JsonReader;
 import persistence.Writable;
 
 import java.util.ArrayList;
@@ -26,6 +25,7 @@ public class BookJournal implements Writable {
     //EFFECTS: adds a journal entry to a list of journal entries
     public void addEntry(Entry entry) {
         this.bookJournal.add(entry);
+        EventLog.getInstance().logEvent(new Event("You added" + entry.getBookName() + "to your book journal"));
     }
 
 
@@ -44,7 +44,7 @@ public class BookJournal implements Writable {
     }
 
     // EFFECTS: returns an unmodifiable list of entries in this book journal
-    public List<Entry> getThingies() {
+    public List<Entry> getEntries() {
         return Collections.unmodifiableList(bookJournal);
     }
 
@@ -62,7 +62,9 @@ public class BookJournal implements Writable {
             entryNum++;
         }
         allEntries = allEntries + "You have " + this.totalEntries() + " entries in the journal!";
+        EventLog.getInstance().logEvent(new Event("You displayed all entries in your book journal"));
         return allEntries;
+
     }
 
     //EFFECTS: Returns a list of titles of all the book in BookJournal that were rated five stars
@@ -77,6 +79,7 @@ public class BookJournal implements Writable {
         if (allFiveStarBooks == "") {
             return noFiveStarBooks;
         }
+        EventLog.getInstance().logEvent(new Event("You displayed all FIVE STAR BOOKS in your book journal"));
         return allFiveStarBooks;
     }
 
@@ -94,6 +97,7 @@ public class BookJournal implements Writable {
         if (allFunnyBooks == "Here are some books you found funny!\n") {
             return noFunnyBooks;
         }
+        EventLog.getInstance().logEvent(new Event("You displayed all the funny books in your book journal"));
         return allFunnyBooks;
     }
 
@@ -111,6 +115,7 @@ public class BookJournal implements Writable {
         if (allRomanticBooks == "Here are some books that made you swoon!\n") {
             return noRomanticBooks;
         }
+        EventLog.getInstance().logEvent(new Event("You displayed all romantic books in your book journal"));
         return allRomanticBooks;
     }
 
@@ -124,6 +129,9 @@ public class BookJournal implements Writable {
         }
         Entry mostRecentBookRead = bookJournal.get(bookJournal.size() - 1);
         mostRecentBookReadString = mostRecentBookReadString + mostRecentBookRead.getBookName();
+
+        EventLog.getInstance().logEvent(new Event("You displayed the most recent book you read which was "
+                + mostRecentBookRead.getBookName()));
         return mostRecentBookReadString;
     }
 

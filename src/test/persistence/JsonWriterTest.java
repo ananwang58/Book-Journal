@@ -4,7 +4,6 @@ import model.BookJournal;
 import model.Entry;
 import org.junit.jupiter.api.Test;
 
-import java.awt.print.Book;
 import java.io.IOException;
 import java.util.List;
 
@@ -62,7 +61,7 @@ public class JsonWriterTest extends JsonTest {
             JsonReader reader = new JsonReader("./data/testWriterGeneralBookJournal.json");
             bookJournal = reader.read();
             assertEquals("AnAn Wang", bookJournal.getBookOwner());
-            List<Entry> entries = bookJournal.getThingies();
+            List<Entry> entries = bookJournal.getEntries();
             checkEntry("Pride and Prejudice", "Jane Austen", 4.5, "Romance"
                     , "", entries.get(0));
             checkEntry("The Hitchhiker's Guide to the Galaxy", "Douglas Adams"
