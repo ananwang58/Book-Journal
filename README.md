@@ -54,4 +54,10 @@ Book Journal loaded successfully from
 ./data/bookJournal.json
 
 ### Phase 4: Task 3
+If I had more time to work on this project one improvement I could make to improve my design would be to
+add a class called JsonHandler to encompass JsonReader and JsonWriter so that all Json operations are inside 
+one singular class. This refactoring change will not only improve the testability of my code but also improves its 
+cohesion as the JasonHandler class will now handle all Json responsibilities. Having JsonReader and JsonWriter both 
+defines in a new JsonHandler class will also make it easier for me to maintain and make changes or improvements 
+to in the future.
 
