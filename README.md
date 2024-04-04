@@ -27,3 +27,31 @@ Why is this project of interest to you?
 - You can locate my visual component when pressing the "List All Books" button
 - You can save the state of my application by pressing the "Load" button
 - You can reload the state of my application by pressing the "Save" button
+
+### Phase 4: Task 2
+
+Tue Apr 02 23:13:47 PDT 2024
+You added Pride and Prejudice to your book journal
+
+Tue Apr 02 23:13:50 PDT 2024
+You displayed the most recent book you read which was Pride and Prejuduce
+
+Tue Apr 02 23:13:52 PDT 2024
+You displayed all FIVE STAR BOOKS in your book journal
+
+Tue Apr 02 23:13:55 PDT 2024
+You displayed all romantic books in your book journal
+
+Tue Apr 02 23:13:59 PDT 2024
+You displayed all entries in your book journal
+
+Tue Apr 02 23:14:00 PDT 2024
+Book Journal saved successfully to
+./data/bookJournal.json
+
+Tue Apr 02 23:14:01 PDT 2024
+Book Journal loaded successfully from
+./data/bookJournal.json
+
+### Phase 4: Task 3
+

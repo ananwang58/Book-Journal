@@ -184,6 +184,9 @@ public class BookJournalGUI extends JFrame implements ActionListener {
 
     //EFFECTS: Saves book journal
     private void saveBookJournal() {
+        EventLog.getInstance().logEvent(new Event("Book Journal saved successfully to " + "\n"
+                + JSON_STORE));
+
         try {
             jsonWriter.open();
             jsonWriter.write(bookJournal);
@@ -197,6 +200,9 @@ public class BookJournalGUI extends JFrame implements ActionListener {
 
     //EFFECTS: Loads book journal
     private void loadBookJournal() {
+
+        EventLog.getInstance().logEvent(new Event("Book Journal loaded successfully from " + "\n"
+                + JSON_STORE));
         try {
             bookJournal = jsonReader.read();
             JOptionPane.showMessageDialog(this, "Book Journal loaded successfully from " + "\n"

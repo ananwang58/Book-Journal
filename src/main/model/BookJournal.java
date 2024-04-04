@@ -25,7 +25,7 @@ public class BookJournal implements Writable {
     //EFFECTS: adds a journal entry to a list of journal entries
     public void addEntry(Entry entry) {
         this.bookJournal.add(entry);
-        EventLog.getInstance().logEvent(new Event("You added" + entry.getBookName() + "to your book journal"));
+        EventLog.getInstance().logEvent(new Event("You added " + entry.getBookName() + " to your book journal"));
     }
 
 
