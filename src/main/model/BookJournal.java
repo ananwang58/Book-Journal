@@ -21,7 +21,7 @@ public class BookJournal implements Writable {
         this.name = name;
         this.owner = owner;
     }
-
+    
     //EFFECTS: adds a journal entry to a list of journal entries
     public void addEntry(Entry entry) {
         this.bookJournal.add(entry);

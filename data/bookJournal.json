@@ -1,11 +1,27 @@
 {
     "owner": "AnAn Wang",
-    "book journal": [{
-        "author": "wfjbwe",
-        "review": "wefwef",
-        "name": "sfh",
-        "genre": "skfgbrewkf",
-        "rating": 4
-    }],
+    "book journal": [
+        {
+            "author": "Jane Austen",
+            "review": "great book!",
+            "name": "Pride and Prejudice",
+            "genre": "Romance",
+            "rating": 5
+        },
+        {
+            "author": "Rick Riordan",
+            "review": "one of my favorite childhood series",
+            "name": "Percy Jackson",
+            "genre": "Fantasy",
+            "rating": 5
+        },
+        {
+            "author": "Sarah J Mass",
+            "review": "such an amazing series!!",
+            "name": "Throne of Glass",
+            "genre": "Fantasy",
+            "rating": 5
+        }
+    ],
     "name": "Book Journal"
 }
