@@ -61,3 +61,4 @@ cohesion as the JasonHandler class will now handle all Json responsibilities. Ha
 defines in a new JsonHandler class will also make it easier for me to maintain and make changes or improvements 
 to in the future.
 
+# Book-Journal
