@@ -134,6 +134,7 @@ public class BookJournal implements Writable {
         return mostRecentBookReadString;
     }
 
+
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
