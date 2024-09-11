@@ -14,7 +14,6 @@ public class BookJournal implements Writable {
     private String owner; //Journal owner
     private ArrayList<Entry> bookJournal;
 
-//
     //EFFECTS: Constructs a list of Books(Journal Entries)
     public BookJournal(String name, String owner) {
         this.bookJournal = new ArrayList<Entry>();
